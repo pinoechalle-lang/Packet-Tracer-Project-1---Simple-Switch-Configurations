@@ -1,0 +1,35 @@
+# Switch-A configuration commands
+
+enable
+
+configure terminal
+
+hostname Switch-A
+
+banner motd #
+-- Authorized Personnel Only! --
+
+line console 0
+ password cisco
+ login
+exit
+
+enable secret cisco
+service password-encryption
+
+line vty 0 4
+ password cisco
+ transport input telnet
+ login
+exit
+
+interface vlan 1
+ ip address 192.168.1.2 255.255.255.0
+ no shutdown
+exit
+
+do write                             // If in Global Config
+
+copy running-config startup-config   // If in EXEC mode
+
+git commit -m "Add Switch-A configuration"
