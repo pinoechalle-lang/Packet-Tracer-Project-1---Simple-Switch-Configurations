@@ -34,15 +34,15 @@ interface fa0/1
 exit
 
 interface fa0/2
- description Link to PC 1 - B
+ description Link to PC 1 - A
 exit
 
 interface fa0/3
- description Link to PC 2 - B
+ description Link to PC 2 - A
 exit
 
 do write                             // If in Global Config
 
 copy running-config startup-config   // If in EXEC mode
 
-git commit -m "Switch-A configuration"
+
