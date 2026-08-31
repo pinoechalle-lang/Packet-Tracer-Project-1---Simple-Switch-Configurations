@@ -1,0 +1,46 @@
+# Switch-B configuration commands
+
+enable
+
+configure terminal
+
+hostname Switch-B
+
+banner motd #
+-- Authorized Personnel Only! --
+
+line console 0
+ password cisco
+ login
+exit
+
+enable secret cisco
+service password-encryption
+
+line vty 0 4
+ password cisco
+ transport input telnet
+ login
+exit
+
+interface vlan 1
+ description Remote Access (Telnet) - Switch B
+ ip address 192.168.1.2 255.255.255.0
+ no shutdown
+exit
+
+interface fa0/1
+ description Link to Switch-A
+exit
+
+interface fa0/2
+ description Link to PC 1 - A
+exot
+
+interface fa0/3
+ description Link to PC 2 - A
+
+ 
+do write                             // If in Global Config
+
+copy running-config startup-config   // If in EXEC mode
