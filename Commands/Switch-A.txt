@@ -24,8 +24,21 @@ line vty 0 4
 exit
 
 interface vlan 1
+ description Remote Access (Telnet) - Switch A
  ip address 192.168.1.2 255.255.255.0
  no shutdown
+exit
+
+interface fa0/1
+ description Link to Switch-B
+exit
+
+interface fa0/2
+ description Link to PC 1 - A
+exit
+
+interface fa0/3
+ description Link to PC 2 - A
 exit
 
 do write                             // If in Global Config
