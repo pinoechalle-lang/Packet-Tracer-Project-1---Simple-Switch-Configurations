@@ -34,11 +34,11 @@ interface fa0/1
 exit
 
 interface fa0/2
- description Link to PC 1 - A
+ description Link to PC 1 - B
 exot
 
 interface fa0/3
- description Link to PC 2 - A
+ description Link to PC 2 - B
 
  
 do write                             // If in Global Config
